@@ -90,7 +90,6 @@ def evaluate_tflite_model(interpreter, image_path):
     return predicted_class
 
 def capture_image_raw():
-    """Capture a raw image from the camera and return as PIL Image."""
     camera = Picamera2()
     
     # Configure camera to use full resolution
@@ -113,7 +112,6 @@ def capture_image_raw():
     return img
 
 def save_image(img, filepath, target_resolution=LOW_RES):
-    """Save an image to the specified filepath with optional resizing and greyscale conversion."""
     # Resize image
     img_resized = img.resize(target_resolution, Image.LANCZOS)
     
@@ -127,7 +125,6 @@ def save_image(img, filepath, target_resolution=LOW_RES):
     return filepath
 
 def capture_and_save_image():
-    """Capture image and save to both high-res and low-res directories."""
     # Capture raw image
     img = capture_image_raw()
     
@@ -148,7 +145,6 @@ def capture_and_save_image():
         return low_res_filepath
 
 def capture_image():
-    """Capture image and save to temporary directory for inference."""
     # Capture raw image
     img = capture_image_raw()
     
